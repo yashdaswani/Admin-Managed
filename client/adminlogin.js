@@ -1,4 +1,3 @@
-// In your HTML file, inside a <script> tag or a separate script file
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.querySelector('form');
   
@@ -24,11 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.href = '/client/createUser.html';
         } else {
           console.error('Login failed:', data.message);
-          // Display an error message or take appropriate action
         }
       } catch (error) {
         console.error('Error during login:', error);
-        // Handle errors, display error messages, etc.
       }
     });
   });

@@ -23,11 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 getUserid(username);
             } else {
                 console.error('Login failed:', data.message);
-                // Display an error message or take appropriate action
             }
         } catch (error) {
             console.error('Error during login:', error);
-            // Handle errors, display error messages, etc.
         }
     });
 });
@@ -39,11 +37,10 @@ async function getUserid(username) {
         
         if (data.success) {
             console.log(data);
-            const userId = data.userId; // Use data.userId instead of data._id
+            const userId = data.userId; 
             window.location.href = `/client/user.html?userId=${userId}`;
         } else {
             console.log('Error:', data.message);
-            // Handle errors, display error messages, etc.
         }
     } catch (error) {
         console.error('Error fetching user data:', error);

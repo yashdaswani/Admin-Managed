@@ -1,4 +1,3 @@
-// routes/adminRoutes.js
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
@@ -7,20 +6,16 @@ const User = require('..//Models/user');
 const { authenticateAdmin } = require('../middleware/authMiddleware');
 
 
-// Admin routes
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
-  // Check if both username and password are provided
   if (!username || !password) {
     return res.status(400).json({ success: false, message: 'Username and password are required' });
   }
 
   try {
-    // Find the admin by username
     const admin = await Admin.findOne({ username });
 
-    // If admin not found, or password is incorrect
 
     if(!admin)
     {
@@ -33,7 +28,6 @@ router.post('/login', async (req, res) => {
     }
 
 
-    // Admin authenticated successfully
     res.json({ success: true, message: 'Login successful', admin });
   } catch (error) {
     console.error(error);
@@ -41,7 +35,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Assuming you have the necessary imports for User
 
 router.get('/dashboard', async (req, res) => {
   try {
@@ -55,21 +48,17 @@ router.get('/dashboard', async (req, res) => {
 });
 
 
-// Assuming you have the necessary imports for User and any required modules
 
 router.post('/createUser', async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    // Check if both username and password are provided
     if (!username || !password) {
       return res.status(400).json({ success: false, message: 'Username and password are required' });
     }
 
-    // Create a new user instance
     const newUser = new User({ username, password, isApproved: false });
 
-    // Save the user to the database
     await newUser.save();
 
     res.status(201).json({ success: true, message: 'User created successfully', user: newUser });
@@ -80,7 +69,6 @@ router.post('/createUser', async (req, res) => {
 });
 
 
-// Assuming you have the necessary imports for User and authenticateAdmin
 
 router.get('/viewUser/:userId', async (req, res) => {
   const userId = req.params.userId;
@@ -133,6 +121,5 @@ router.post('/deleteUser/:userId', async (req, res) => {
   }
 });
 
-// Add other admin routes as needed
 
 module.exports = router;

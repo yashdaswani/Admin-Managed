@@ -1,4 +1,3 @@
-// middleware/authMiddleware.js
 const bcrypt = require('bcrypt');
 const Admin = require('../Models/Admin');
 const User = require('../Models/user');
@@ -12,7 +11,6 @@ const authenticateAdmin = async(req, res, next) => {
 
   const admin = await Admin.findOne({ username });
 
-  // If admin not found, or password is incorrect
 
   if(!admin)
   {
@@ -27,7 +25,6 @@ const authenticateAdmin = async(req, res, next) => {
       next();
 };
 
-// Assuming you have the necessary imports for User
 
 const authenticateUser = async (req, res, next) => {
   const userId = req.params.userId;

@@ -6,7 +6,6 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Connect to MongoDB
 mongoose.connect('mongodb+srv://yash:yash@cluster0.ulq8vzc.mongodb.net/?retryWrites=true&w=majorityy', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -18,7 +17,6 @@ mongoose.connect('mongodb+srv://yash:yash@cluster0.ulq8vzc.mongodb.net/?retryWri
 });
 
 app.use(cors())
-// Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'Yash', resave: true, saveUninitialized: true }));

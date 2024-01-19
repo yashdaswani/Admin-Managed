@@ -1,13 +1,11 @@
-// In your HTML file, inside a <script> tag or a separate script file
 
 async function fetchAndDisplayUsers() {
     try {
-      const response = await fetch('http://localhost:3000/admin/dashboard'); // Replace with your server endpoint
+      const response = await fetch('http://localhost:3000/admin/dashboard'); 
       const data = await response.json();
   
       if (data.success) {
         const users = data.users;
-        // Assuming you have a function to display users on the admin dashboard
         displayUsers(users);
       } else {
         console.error('Failed to fetch user data:', data.message);
@@ -26,15 +24,14 @@ async function fetchAndDisplayUsers() {
   }
 
   function viewDashboard() {
-    // Redirect to the dashboard page
-    window.location.href = '/client/admindashboard.html'; // Replace with your actual dashboard URL
+    window.location.href = '/client/admindashboard.html'; 
   }
 
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchAndDisplayUsers();
 
-    const viewButton = document.querySelector('.viewbutton'); // Assuming you have a button with the class 'viewbutton'
+    const viewButton = document.querySelector('.viewbutton'); 
   
   if (viewButton) {
     viewButton.addEventListener('click', () => {
@@ -66,11 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log('User Created:', data);
         } else {
           console.error('Login failed:', data.message);
-          // Display an error message or take appropriate action
         }
       } catch (error) {
         console.error('Error during login:', error);
-        // Handle errors, display error messages, etc.
       }
     });
   });
