@@ -1,0 +1,40 @@
+<!-- admin_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+
+<div class="container my-3">
+  <h2 class="mb-4">Admin Dashboard</h2>
+
+  <table class="table table-bordered my-2">
+    <thead>
+      <tr>
+        <th scope="col">UserID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody">
+      <!-- User data will be dynamically added here using JavaScript -->
+    </tbody>
+  </table>
+</div>
+
+<!-- Bootstrap JS and dependencies (you may need to adjust the version) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Include the JavaScript file for the admin dashboard -->
+<script src="admindashboard.js"></script>
+
+</body>
+</html>

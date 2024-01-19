@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Admin Login Page</title>
+  <style>
+
+    .adminLogincontainer {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      overflow: hidden;
+    }
+
+    .leftSide{
+        background-color: blue;
+    }
+
+    .login-container {
+      width: 30vw;
+      padding: 20px;
+      border: 1px solid #d1d1d1;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .logo-box {
+      background-color: #fff;
+      border: 1px solid #d1d1d1;
+      padding: 15px;
+      text-align: center;
+      border-radius: 5px;
+      width: 10rem;
+    }
+
+    .userContainer{
+        width: 35vw;
+        height: 10rem;
+        background-color: aquamarine;
+        margin: 2rem;
+    }
+    .viewbutton{
+        width: 5rem;
+        position: relative;
+        right: -30%;
+    }
+
+    /* Add your custom styles here if needed */
+  </style>
+</head>
+<body>
+
+<div class="adminLogincontainer">
+  <div class="row h-100">
+    <!-- Left Side (Logo Box) -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center" >
+        <div class="login-container">
+            <h2 class="text-center mb-4">Create User</h2>
+            <!-- Form -->
+            <form id="createUserform">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+    
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+          </div>
+    </div>
+    
+    <!-- Right Side (Heading, Form) -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center flex-column">
+        <h2 class="text-center mb-4">View User</h2>
+        <div class="userContainer d-flex align-items-center justify-content-center">
+            <form>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <div type="text" class="form-control" id="username1" name="username" required></div>
+                </div>
+            </form>
+        </div>
+        <div class="userContainer d-flex align-items-center justify-content-center">
+            <form>
+                <div class="form-group">
+                  <label for="username" >Username</label>
+                  <div type="text" class="form-control" id="username2" name="username" required></div>
+                </div>
+            </form>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block viewbutton">View</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (you may need to adjust the version) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./createuser.js"></script>
+</body>
+</html>

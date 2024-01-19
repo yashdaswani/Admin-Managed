@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>User Page</title>
+    <style>
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+      .useruploadcont {
+        width: 30%;
+      }
+      .viewUserButton {
+        position: absolute;
+        right: 5%;
+      }
+      #rightBar {
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: #f8f9fa; /* Adjust background color as needed */
+        overflow-x: hidden;
+        transition: width 0.5s ease;  /* Corrected the transition property */
+        box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.5);
+      }
+      #rightBarContent {
+        padding: 20px;
+      }
+      #closeBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button type="button" class="btn btn-outline-primary my-3 viewUserButton">
+        View
+      </button>
+     
+      <div class="wrapper">
+        <div class="useruploadcont">
+            <form>
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      name="username"
+                      required
+                      placeholder="Enter updated name"
+                    />
+                  </div>
+                <div class="mb-3">
+                  <label for="photoInput" class="form-label">Choose a profile photo:</label>
+                  <input type="file" class="form-control" id="photoInput" accept="image/*">
+                </div>
+          
+                <div id="cropperContainer">
+                  <img id="previewImage" class="img-fluid" alt="Preview">
+                </div>
+          
+                <button type="submit" class="btn btn-primary mt-3 updateBtn">Update Profile</button>
+              </form>
+        </div>
+      </div>
+
+      <!-- Right Bar -->
+      <div id="rightBar">
+        <div id="closeBtn" onclick="toggleRightBar()">&times;</div>
+        <div id="rightBarContent">
+          <h4>User Information</h4>
+          <p id="rightBarUsername"></p>
+          <img id="rightBarUserPhoto" class="img-fluid" alt="User Photo">
+          <div class="approval text-center">Accepted by Admin!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (you may need to adjust the version) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="user.js"></script>
+  </body>
+</html>
